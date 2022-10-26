@@ -212,7 +212,7 @@ static int ek79007_get_modes(struct drm_panel *panel, struct drm_connector *conn
 
     mode->type = DRM_MODE_TYPE_DRIVER | DRM_MODE_TYPE_PREFERRED;
 
-    drm_mode_probe_add(connector, mode);
+    drm_mode_probed_add(connector, mode);
 
     connector->display_info.width_mm    = mode->width_mm;
     connector->display_info.height_mm   = mode->height_mm;
@@ -302,11 +302,11 @@ static struct mipi_dsi_driver ek79007_dsi_driver = {
         .driver     = {
                     .name           = "ek79007-dsi",
                     .of_match_table = ek79007_of_match,
-        };
+        },
 };
 
 module_mipi_dsi_driver(ek79007_dsi_driver);
 
 MODULE_AUTHOR("MRosner");
 MODULE_DESCRIPTION("EK79007 mipi dsi driver");
-MODULE_LICENCE("GPL v2");
+MODULE_LICENSE("GPL v2");
