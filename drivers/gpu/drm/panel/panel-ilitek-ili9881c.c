@@ -540,9 +540,9 @@ static int ili9881c_prepare(struct drm_panel *panel)
 	if (ret)
 		return ret;
 
-	//ret = mipi_dsi_dcs_set_tear_on(ctx->dsi, MIPI_DSI_DCS_TEAR_MODE_VBLANK);
-	//if (ret)
-	//	return ret;
+    ret = mipi_dsi_dcs_set_tear_on(ctx->dsi, MIPI_DSI_DCS_TEAR_MODE_VBLANK);
+    if (ret)
+	return ret;
 
     ret = mipi_dsi_dcs_exit_sleep_mode(ctx->dsi);
 
