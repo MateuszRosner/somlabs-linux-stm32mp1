@@ -76,7 +76,7 @@ static const struct ek79007_instr LX700B4008CTP14_init[] = {
     EK79007_COMMAND_INSTR(0x85, 0xe3),  //Gamma Color Register
     EK79007_COMMAND_INSTR(0x86, 0x88),  //Gamma Color Register
     EK79007_COMMAND_INSTR(0xb2, 0x10),  //Panel Control Register 0x10 - 2 lane MIPI, 0x20 - 3 lane MIPI, 0x30 - 4 lane MIPI
-}
+};
 
 static inline struct ek79007 *panel_to_ek79007(struct drm_panel *panel){
     return container_of(panel, struct ek79007, panel);
