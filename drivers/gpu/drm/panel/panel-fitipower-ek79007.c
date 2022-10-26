@@ -18,7 +18,7 @@
 
 enum ek79007_op {
     EK79007_SWITCH_PAGE,
-    EK79007_COMMAND
+    EK79007_COMMAND,
 };
 
 struct ek79007_instr {
@@ -41,7 +41,7 @@ struct ek79007_desc {
 
 struct ek79007 {
     struct drm_panel            panel;
-    struct mipi_display_device  *dsi;
+    struct mipi_dsi_device      *dsi;
     const struct ek79007_desc   *desc;
 
     struct regulator            *power;
@@ -192,7 +192,7 @@ static const struct drm_display_mode LX700B4008CTP14_default_mode = {
 
     .width_mm       = 154,
     .height_mm	    = 85,
-}
+};
 
 static int ek79007_get_modes(struct drm_panel *panel, struct drm_connector *connector){
     struct ek79007 *ctx = panel_to_ek79007(panel);
