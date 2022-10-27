@@ -700,7 +700,7 @@ static int ili9881c_dsi_probe(struct mipi_dsi_device *dsi)
 	ctx->reset = devm_gpiod_get(&dsi->dev, "reset", GPIOD_OUT_LOW);
 	if (IS_ERR(ctx->reset)) {
 		dev_err(&dsi->dev, "Couldn't get our reset GPIO\n");
-		return PTR_ERR(ctx->reset);
+		//return PTR_ERR(ctx->reset);
 	}
 
 	ret = drm_panel_of_backlight(&ctx->panel);
