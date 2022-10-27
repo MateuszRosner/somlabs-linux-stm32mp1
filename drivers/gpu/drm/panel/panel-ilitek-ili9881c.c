@@ -536,13 +536,13 @@ static int ili9881c_prepare(struct drm_panel *panel)
 			return ret;
 	}
 
-	ret = ili9881c_switch_page(ctx, 0);
-	if (ret)
-		return ret;
+	//ret = ili9881c_switch_page(ctx, 0);
+	//if (ret)
+	//	return ret;
 
-    ret = mipi_dsi_dcs_set_tear_on(ctx->dsi, MIPI_DSI_DCS_TEAR_MODE_VBLANK);
-    if (ret)
-	return ret;
+    //ret = mipi_dsi_dcs_set_tear_on(ctx->dsi, MIPI_DSI_DCS_TEAR_MODE_VBLANK);
+    //if (ret)
+	//return ret;
 
     ret = mipi_dsi_dcs_exit_sleep_mode(ctx->dsi);
 
@@ -625,7 +625,7 @@ static const struct drm_display_mode k101_im2byl02_default_mode = {
 };
 
 static const struct drm_display_mode ph720128t003_zbc02_default_mode = {
-    	.clock          = 74250,
+    	.clock          = 48000,
 
     	.hdisplay       = 1024,
         .hsync_start    = 1024 + 160,
